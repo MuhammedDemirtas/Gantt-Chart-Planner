@@ -9,8 +9,6 @@ Features
 
 Installation
 
-When rendered on GitHub, it will display the code in a block format like this:
-
 ```bash
 git clone https://github.com/MuhammedDemirtas/Gantt-Schedule-Chart-Planner.git
 cd Gantt-Schedule-Chart-Planner
@@ -20,9 +18,9 @@ pip install -r requirements.txt
 Running the Application
 
 After installing the dependencies, you can run the application using:
-
+```bash
 python main.py
-
+```
 This will launch the Gantt chart planner, allowing you to define and manage your project tasks.
 
 Code Overview
