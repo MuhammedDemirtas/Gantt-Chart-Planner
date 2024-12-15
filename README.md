@@ -5,8 +5,8 @@ This Python-based Gantt Chart Planner allows you to visualize and manage project
 Features
 
     * Create and edit tasks with start dates, durations, and dependencies.
-    - Visualize tasks and their dependencies in a Gantt chart.
-    - Save and load projects for continued work.
+    * Visualize tasks and their dependencies in a Gantt chart.
+    * Save and load projects for continued work.
 
 Installation
 
