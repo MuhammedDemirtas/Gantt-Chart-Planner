@@ -10,9 +10,13 @@ Features
 Installation
 
 To install the necessary dependencies, clone this repository and install the required packages:
+'''
 git clone https://github.com/MuhammedDemirtas/Gantt-Schedule-Chart-Planner.git
 cd Gantt-Schedule-Chart-Planner
+'''
+'''
 pip install -r requirements.txt
+'''
 
 Running the Application
 
