@@ -1,34 +1,36 @@
-# Gantt Chart Planner
+# Gantt Schedule Chart Planner
 
-Gantt Chart Planner, projelerinizi yönetmek ve zaman çizelgesine dayalı olarak planlamak için geliştirilmiş bir araçtır. Bu yazılım, projelerinizi daha verimli bir şekilde takip etmenize olanak sağlar, görevlerinizi görselleştirir ve proje ilerlemesini kolayca izleyebilmenize yardımcı olur.
-Kurulum
+This Python-based Gantt Chart Planner allows you to visualize and manage project schedules. It enables you to create tasks, define durations, set dependencies, and track progress in a Gantt chart format.
+Features
 
-    Python Kurulumu:
-    Projeyi çalıştırmak için Python 3.x sürümüne sahip olmanız gerekmektedir. Python'ı resmi web sitesinden indirebilirsiniz.
+    Create and edit tasks with start dates, durations, and dependencies.
+    Visualize tasks and their dependencies in a Gantt chart.
+    Save and load projects for continued work.
 
-    Bağımlılıkların Yüklenmesi:
-    Gerekli Python paketlerini yüklemek için aşağıdaki komutu çalıştırın:
+Installation
 
+To install the necessary dependencies, clone this repository and install the required packages:
+git clone https://github.com/MuhammedDemirtas/Gantt-Schedule-Chart-Planner.git
+cd Gantt-Schedule-Chart-Planner
 pip install -r requirements.txt
 
-Çalıştırma:
-Projeyi çalıştırmak için aşağıdaki komutu kullanabilirsiniz:
+Running the Application
 
-    python gantt_planner.py
+After installing the dependencies, you can run the application using:
 
-Kullanım
+python main.py
 
-    Yeni bir proje başlatmak için, Yeni Proje seçeneğine tıklayın ve proje adınızı, başlangıç tarihini girin.
-    Görevleri ekleyin, her birinin süresini belirleyin ve görevler arasındaki bağımlılıkları tanımlayın.
-    Proje ilerledikçe, her görevin tamamlanma yüzdesini güncelleyerek çizelgenizi güncel tutun.
-    Zaman çizelgesindeki her görev, başlangıç ve bitiş tarihlerini gösteren bir çubuk şeklinde görüntülenir.
+This will launch the Gantt chart planner, allowing you to define and manage your project tasks.
 
-Katkıda Bulunma
+Code Overview
 
-    Bu projeye katkıda bulunmak isterseniz, önce bu depo üzerinde bir fork oluşturun.
-    Gerekli değişiklikleri yapın ve pull request gönderin.
-    Katkılarınızın büyük bir kısmı için teşekkür ederiz!
+    main.py: The entry point of the application. It loads the interface and controls the overall project flow.
+    gantt_chart.py: Handles the creation and visualization of the Gantt chart.
+    task_manager.py: Manages task creation, task properties (such as start date, end date), and dependencies.
+    utils.py: Contains utility functions for saving and loading projects.
 
-Lisans
+License
 
-Bu proje MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için LICENSE dosyasına bakabilirsiniz.
+This project is licensed under the MIT License.
+
+For more details, visit the GitHub repository.
