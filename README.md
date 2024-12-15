@@ -32,6 +32,9 @@ Code Overview
     - Manages task creation, task properties (such as start date, end date), and dependencies.
     - Contains utility functions for saving and loading projects.
 
+    projects.json:
+    - file holds the names of different projects, which are essentially the titles of the plans being managed within the application. It acts as a reference for     all the saved projects, allowing users to easily access and load specific project details when required. This helps maintain an organized structure for          project management, ensuring smooth navigation and tracking within the Gantt chart planner.
+
 License
 
 This project is licensed under the MIT License.
