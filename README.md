@@ -1,4 +1,4 @@
-#Gantt Chart Planner
+# Gantt Chart Planner
 
 Gantt Chart Planner, projelerinizi yönetmek ve zaman çizelgesine dayalı olarak planlamak için geliştirilmiş bir araçtır. Bu yazılım, projelerinizi daha verimli bir şekilde takip etmenize olanak sağlar, görevlerinizi görselleştirir ve proje ilerlemesini kolayca izleyebilmenize yardımcı olur.
 Kurulum
