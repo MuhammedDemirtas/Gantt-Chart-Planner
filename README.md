@@ -19,16 +19,17 @@ Running the Application
 
 After installing the dependencies, you can run the application using:
 ```bash
-python main.py
+python Gantt_Chart_Planner.py
 ```
 This will launch the Gantt chart planner, allowing you to define and manage your project tasks.
 
 Code Overview
 
-    main.py: The entry point of the application. It loads the interface and controls the overall project flow.
-    gantt_chart.py: Handles the creation and visualization of the Gantt chart.
-    task_manager.py: Manages task creation, task properties (such as start date, end date), and dependencies.
-    utils.py: Contains utility functions for saving and loading projects.
+    gantt_chart.py: 
+    - The entry point of the application. It loads the interface and controls the overall project flow.
+    - Handles the creation and visualization of the Gantt chart.
+    - Manages task creation, task properties (such as start date, end date), and dependencies.
+    - Contains utility functions for saving and loading projects.
 
 License
 
