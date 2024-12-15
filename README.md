@@ -1,11 +1,12 @@
 # Gantt Schedule Chart Planner
-
+-----------------------------------------------------------------
 This Python-based Gantt Chart Planner allows you to visualize and manage project schedules. It enables you to create tasks, define durations, set dependencies, and track progress in a Gantt chart format.
+-----------------------------------------------------------------
 Features
 
-    Create and edit tasks with start dates, durations, and dependencies.
-    Visualize tasks and their dependencies in a Gantt chart.
-    Save and load projects for continued work.
+    * Create and edit tasks with start dates, durations, and dependencies.
+    - Visualize tasks and their dependencies in a Gantt chart.
+    - Save and load projects for continued work.
 
 Installation
 
