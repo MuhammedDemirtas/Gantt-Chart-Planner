@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from datetime import datetime, timedelta
 import tkinter as tk
-from tkinter import ttk, messagebox, colorchooser
+from tkinter import ttk, messagebox, colorchooser, filedialog
 from tkcalendar import DateEntry
 import json
 
@@ -98,7 +98,9 @@ def create_gantt_chart():
     df = pd.DataFrame(schedule)
     df = df.sort_values(by="Start")
 
-    fig, ax = plt.subplots(figsize=(10, len(schedule) * 0.5))
+    fig, ax = plt.subplots(figsize=(10, len(schedule) * 0.4))  # Adjusted height for thinner bars
+
+    annotation = None
 
     for i, task in enumerate(df.itertuples()):
         start = task.Start
@@ -106,10 +108,43 @@ def create_gantt_chart():
         color = task.Color
         progress = task.Progress / 100
 
-        ax.barh(i, (end - start).days * progress, left=start, color="green")
-        ax.barh(i, (end - start).days * (1 - progress), left=start + (end - start) * progress, color=color, alpha=0.5)
+        bar1 = ax.barh(i, (end - start).days * progress, left=start, color="green", height=0.4)
+        bar2 = ax.barh(i, (end - start).days * (1 - progress), left=start + (end - start) * progress, color=color, alpha=0.5, height=0.4)
+
+        # Adding hover text for progress percentage
+        for bar in bar1:
+            bar.set_picker(True)
+            bar.set_gid(f"Progress: {task.Progress}%")
+
+        for bar in bar2:
+            bar.set_picker(True)
+            bar.set_gid(f"Remaining: {100 - task.Progress}%")
 
         ax.text(start, i, f"{task.Task} ({task.Person})", va="center", ha="left", fontsize=9)
+
+    def on_hover(event):
+        nonlocal annotation
+        if annotation:
+            annotation.remove()
+            annotation = None
+            fig.canvas.draw_idle()
+
+        if event.inaxes == ax:
+            for bar in ax.patches:
+                if bar.contains(event)[0]:
+                    gid = bar.get_gid()
+                    annotation = ax.annotate(
+                        gid,
+                        xy=(event.xdata, event.ydata),
+                        xytext=(15, 15),
+                        textcoords="offset points",
+                        bbox=dict(boxstyle="round", fc="w", ec="k"),
+                        arrowprops=dict(arrowstyle="->")
+                    )
+                    fig.canvas.draw_idle()
+                    break
+
+    fig.canvas.mpl_connect("motion_notify_event", on_hover)
 
     ax.set_yticks(range(len(schedule)))
     ax.set_yticklabels(df["Task"])
@@ -121,6 +156,17 @@ def create_gantt_chart():
 
     plt.tight_layout()
     plt.show()
+
+    save_pdf = messagebox.askyesno("Save as PDF", "Do you want to save the Gantt chart as a PDF?")
+    if save_pdf:
+        file_name = filedialog.asksaveasfilename(
+            defaultextension=".pdf",
+            filetypes=[("PDF files", "*.pdf"), ("All files", "*.*")],
+            title="Save Gantt Chart"
+        )
+        if file_name:
+            fig.savefig(file_name, format="pdf")
+            messagebox.showinfo("Success", f"Gantt chart saved as {file_name}.")
 
 def main_menu():
 
@@ -325,7 +371,6 @@ def main_gui(project_name):
     root.title(f"Project {project_name}")
 
     root.attributes("-fullscreen", True)
-
 
     frame = ttk.Frame(root)
     frame.grid(row=0, column=0, sticky="nsew", padx=500, pady=100)
