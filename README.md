@@ -53,7 +53,7 @@ This will launch the Gantt Chart Planner, allowing you to define and manage your
 
 ## Code Overview
 
-### `gantt_chart.py`
+### `Gantt_chart_planner.py`
 - The main entry point of the application. It loads the interface and controls the overall project flow.
 - Handles the creation and visualization of the Gantt chart.
 - Manages tasks, including their properties (e.g., start date, end date, progress, priority).
